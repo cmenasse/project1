@@ -1,5 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins+Roboto+Mono:400,700&display=swap');
 
 body {
+    background-color: #181a1b !important;
+    border-color: #776e62 !important;
+    color: #3aa4e2 !important;
     margin: 0;
+  }
+
+  h1 {
+      padding: 10px;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  .tile {
+    display: flex;
+    font-size: 60px;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    color: rgb(49, 190, 131);
+    background-color: rgb(93, 110, 185);
   }
