@@ -29,3 +29,7 @@ body {
     color: rgb(49, 190, 131);
     background-color: rgb(93, 110, 185);
   }
+
+  .inactive {
+    visibility: hidden;
+  }
