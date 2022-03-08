@@ -28,7 +28,6 @@ function clickEvent(correct) {
             hideTiles('.tile:not(.inactive)');
             if (correct++ === level)
                 startLevel(++level);
-    
         }
         else 
             endGame(level); 
@@ -38,9 +37,8 @@ function clickEvent(correct) {
 }
 
 function startLevel(level) {
-
-    let tiles = game.shuffle(game.tiles);
     let correct = 1;
+    let tiles = game.shuffle(game.tiles);
     dipslayLevel(level);
     displayTiles(tiles, level)
     clickEvent(correct);
@@ -51,39 +49,3 @@ let level  = 1;
 startLevel(level);
 
 
-
-
-
-/*
-    document.querySelectorAll('.tile:not(.inactive)')
-            .forEach(x => {x.addEventListener('click', () => {
-        if (Number(x.textContent) === correct) {
-            x.style.backgroundColor = "#181a1b";
-            x.textContent = "";
-            if (correct == level) {
-                level++;
-                dipslayLevel(level);
-            }
-            
-            else {
-                correct++
-                console.log("correct", correct);
-                console.log("level", level);
-            }
-            hideTiles('.tile:not(.inactive)');
-            console.log("tst", correct);
-            console.log("final", level)
-        }
-        else {
-            exit = 1;
-            Array.from(document.querySelectorAll('.tile')).forEach(x => {
-                x.classList.remove('tile')
-                x.textContent = "";
-                let html =  `<div class="end">Game over! <br> Level ${level}</div>`
-                document.querySelector('#grid').innerHTML = html;
-            });
-        }}, 
-        {once:true});
-        }); 
-
-*/
