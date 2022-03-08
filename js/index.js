@@ -20,32 +20,33 @@ function endGame(level) {
     document.querySelector('#grid').innerHTML = html;
 }
  
-function clickEvent(correct) {
+function handleClick(x) {
+    x.classList.add('inactive');
+    hideTiles('.tile:not(.inactive)');
+    if (Number(x.textContent) === correct) {
+        if (correct++ === level)
+            startLevel(++level);
+    }
+    else 
+        endGame(level);
+}
+
+function clickEvent() {
     document.querySelectorAll('.tile:not(.inactive)')
-    .forEach(x => {x.addEventListener('click', () => {
-        if (Number(x.textContent) === correct) {
-            x.classList.add('inactive');
-            hideTiles('.tile:not(.inactive)');
-            if (correct++ === level)
-                startLevel(++level);
-        }
-        else 
-            endGame(level); 
-        }, 
-        {once:true});
-        }); 
+    .forEach(x => x.addEventListener('click', () => handleClick(x), {once:true}));
 }
 
 function startLevel(level) {
-    let correct = 1;
+    correct = 1;
     let tiles = game.shuffle(game.tiles);
     dipslayLevel(level);
-    displayTiles(tiles, level)
-    clickEvent(correct);
+    displayTiles(tiles, level);
+    clickEvent();
 }
 
 const game = new Game(20);
 let level  = 1;
+let correct = 1;
 startLevel(level);
 
 

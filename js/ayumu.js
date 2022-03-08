@@ -1,6 +1,5 @@
 class Game {
     constructor(n) {
-        //this.tiles = [...Array(n).keys()];
         this.tiles = Array.from(Array(n), (e,i)=>i+1)
       };
       shuffle(arr) {
