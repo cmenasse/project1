@@ -12,8 +12,10 @@ body {
   #grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 100vw;
-    margin: 0 auto;
+    width: 80vw;
+    max-width: 290px;
+    margin: 0px;
+    padding: 0px;
   }
   
   .tile {
