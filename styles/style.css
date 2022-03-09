@@ -1,8 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-color: #181a1b !important;
     border-color: #776e62 !important;
     color: #3aa4e2 !important;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
   }
 
   h1 {
@@ -12,10 +17,12 @@ body {
   #grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    align-content: space-around;
+    justify-content: space-between;
     width: 80vw;
-    max-width: 290px;
-    margin: 0 auto;
-    padding: 0;
+    min-width: 320px;
+    max-width: 400px;
+    margin: auto auto;
   }
   
   .tile {
@@ -23,12 +30,13 @@ body {
     font-size: 40px;
     height: 60px;
     width: 60px;
-    margin: 10px;
     border-radius: 100%;
+    text-align: center;
     align-items: center;
     justify-content: center;
     color: rgb(49, 190, 131);
     background-color: rgb(93, 110, 185);
+    margin: 10px;
   }
 
   .inactive {
