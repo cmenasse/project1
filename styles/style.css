@@ -12,7 +12,7 @@ body {
   #grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 290px;
+    width: 100vw;
     margin: 0 auto;
   }
   
