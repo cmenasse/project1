@@ -47,7 +47,7 @@ function startLevel(level) {
 }
 
 const game = new Game(20);
-let level  = 20;
+let level  = 1;
 let correct = 1;
 startLevel(level);
 
