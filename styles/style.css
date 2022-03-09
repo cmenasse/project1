@@ -14,8 +14,8 @@ body {
     grid-template-columns: repeat(4, 1fr);
     width: 80vw;
     max-width: 290px;
-    margin: 0px;
-    padding: 0px;
+    margin: 0 auto;
+    padding: 0;
   }
   
   .tile {
