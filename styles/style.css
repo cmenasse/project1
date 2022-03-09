@@ -21,8 +21,8 @@ body {
   .tile {
     display: flex;
     font-size: 60px;
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     margin: 10px;
     border-radius: 100%;
     align-items: center;
