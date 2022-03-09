@@ -20,9 +20,9 @@ body {
   
   .tile {
     display: flex;
-    font-size: 50px;
-    height: 60px;
-    width: 60px;
+    font-size: 60px;
+    height: 80px;
+    width: 80px;
     margin: 10px;
     border-radius: 100%;
     align-items: center;
