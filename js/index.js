@@ -16,14 +16,16 @@ function hideTiles(className) {
 }
 
 function endGame(level) {
-    let html =  `<div class="end">Game over! <br> Level ${level}</div>`
+    let html =  `<div class="end">Game over! <br> Level ${level}</div>`;
+    html += `<button onClick="window.location.reload();">Retry</button>`;
     document.querySelector('#grid').innerHTML = html;
 }
  
 function handleClick(x) {
-    x.classList.add('inactive');
-    hideTiles('.tile:not(.inactive)');
     if (Number(x.textContent) === correct) {
+        x.classList.add('inactive');
+        if (correct === 1)
+            hideTiles('.tile:not(.inactive)');
         if (correct++ === level)
             startLevel(++level);
     }
@@ -45,7 +47,7 @@ function startLevel(level) {
 }
 
 const game = new Game(20);
-let level  = 1;
+let level  = 20;
 let correct = 1;
 startLevel(level);
 

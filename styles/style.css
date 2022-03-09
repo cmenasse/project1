@@ -32,3 +32,8 @@ body {
   .inactive {
     visibility: hidden;
   }
+  
+  .tile:hover { 
+    background-color: #262934;
+        cursor: pointer;
+  }
