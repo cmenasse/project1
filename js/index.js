@@ -18,9 +18,9 @@ function hideTiles(className) {
 
 function endGame(finalLevel) {
     level = 1;
-    play("audio/erro.mp3");
+    play("audio/gameover.mp3");
     let html =  `<div class="end">Game over! <br> Level ${finalLevel}</div>`;
-    let audio = "play('audio/thevoice.mp3')";
+    let audio = "play('audio/level.mp3')";
     let resume = "startLevel(level)";
     html += `<button class="retry" onClick=${audio};${resume};>Retry</button>`;
     document.querySelector('#grid').innerHTML = html;
