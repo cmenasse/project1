@@ -15,21 +15,30 @@ function hideTiles(className) {
     document.querySelectorAll(className).forEach(x => x.style.fontSize = 0);
 }
 
-function endGame(level) {
-    let html =  `<div class="end">Game over! <br> Level ${level}</div>`;
-    html += `<button onClick="window.location.reload();">Retry</button>`;
+
+function endGame(finalLevel) {
+    level = 1;
+    play("audio/erro.mp3");
+    let html =  `<div class="end">Game over! <br> Level ${finalLevel}</div>`;
+    let audio = "play('audio/thevoice.mp3')";
+    let resume = "startLevel(level)";
+    html += `<button class="retry" onClick=${audio};${resume};>Retry</button>`;
     document.querySelector('#grid').innerHTML = html;
 }
  
 function handleClick(x) {
     if (Number(x.textContent) === correct) {
         x.classList.add('inactive');
+        play();
         if (window.navigator && window.navigator.vibrate)
-            navigator.vibrate(100);
+            navigator.vibrate(80);
         if (correct === 1)
             hideTiles('.tile:not(.inactive)');
         if (correct++ === level)
-            startLevel(++level);
+            {
+                play("audio/level.mp3");
+                startLevel(++level);
+            }
     }
     else 
         endGame(level);
@@ -39,6 +48,12 @@ function clickEvent() {
     document.querySelectorAll('.tile:not(.inactive)')
     .forEach(x => x.addEventListener('click', () => handleClick(x), {once:true}));
 }
+
+function play(link) {
+    let audio = new Audio(link);
+    audio.volume = ".3"; 
+    audio.play();
+  }
 
 function startLevel(level) {
     correct = 1;

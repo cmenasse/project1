@@ -43,6 +43,11 @@ body {
     visibility: hidden;
   }
 
+  .retry:hover { 
+    background-color: #181a1b;
+    color: white;
+  }
+
   .tile:hover { 
     background-color: #262934;
     cursor: pointer;
