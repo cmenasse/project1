@@ -24,7 +24,8 @@ function endGame(level) {
 function handleClick(x) {
     if (Number(x.textContent) === correct) {
         x.classList.add('inactive');
-        navigator.vibrate(1000);
+        if (window.navigator && window.navigator.vibrate)
+            navigator.vibrate(100);
         if (correct === 1)
             hideTiles('.tile:not(.inactive)');
         if (correct++ === level)
